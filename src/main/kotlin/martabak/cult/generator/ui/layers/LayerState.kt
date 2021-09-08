@@ -1,6 +1,7 @@
 package martabak.cult.generator.ui.layers
 
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import java.awt.Graphics
 import java.awt.image.BufferedImage
 import java.io.File
@@ -11,6 +12,8 @@ class LayersState(default: List<LayerData> = arrayListOf()) {
     var layerList = mutableStateListOf<LayerData>()
     val c = BufferedImage(1800, 1800, BufferedImage.TYPE_INT_RGB)
     val g: Graphics = c.graphics
+
+    val singleOutputPath = mutableStateOf(".")
 
     init {
         default.forEach {

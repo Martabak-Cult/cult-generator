@@ -1,17 +1,15 @@
 package martabak.cult.generator.ui.tools
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import martabak.cult.generator.ui.layers.LayersState
 import martabak.cult.generator.ui.tools.save.SaveOne
 
 @Composable
-fun ToolsColumn(layersState: LayersState) {
+fun ToolsColumn(layersState: LayersState, modifier: Modifier = Modifier) {
 
-    Column(Modifier.width(300.dp)) {
+    Column(modifier = modifier) {
         SaveOne(layersState)
     }
 }

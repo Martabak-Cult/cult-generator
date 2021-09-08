@@ -1,13 +1,13 @@
 package martabak.cult.generator.ui
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toComposeBitmap
 import martabak.cult.generator.ui.layers.LayersState
 import martabak.cult.generator.ui.tools.ToolsColumn
@@ -35,15 +35,15 @@ fun GeneratorView() {
 
     Box {
         Row(Modifier.fillMaxSize()) {
-            LayersColumn(layerstate)
-            CenterImage(layerstate)
-            ToolsColumn(layerstate)
+            LayersColumn(layerstate, Modifier.weight(1f).fillMaxHeight().fillMaxWidth())
+            CenterImage(layerstate, Modifier.wrapContentWidth().background(Color.Red))
+            ToolsColumn(layerstate, Modifier.weight(1f).fillMaxHeight().fillMaxWidth())
         }
     }
 }
 
 @Composable
-fun CenterImage(layerState: LayersState) {
+fun CenterImage(layerState: LayersState, modifier: Modifier = Modifier) {
 
     layerState.layerList.forEach { l ->
         val image: BufferedImage =
@@ -51,6 +51,6 @@ fun CenterImage(layerState: LayersState) {
         layerState.g.drawImage(image, 0, 0, 1800, 1800, null)
 
     }
-    Image(layerState.c.toComposeBitmap(), "")
+    Image(layerState.c.toComposeBitmap(), "", modifier = modifier)
 
 }

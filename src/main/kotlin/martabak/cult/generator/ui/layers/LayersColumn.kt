@@ -16,7 +16,7 @@ import martabak.cult.generator.ui.layers.LayersState
 import martabak.cult.generator.ui.utils.FileDialog
 
 @Composable
-fun LayersColumn(layerState: LayersState) {
+fun LayersColumn(layerState: LayersState, modifier: Modifier = Modifier) {
 
     var layerChooserOpen by remember { mutableStateOf(false) }
     if (layerChooserOpen) {
@@ -30,7 +30,7 @@ fun LayersColumn(layerState: LayersState) {
         )
     }
 
-    Column(Modifier.width(300.dp)) {
+    Column(modifier = modifier) {
         Text("LAYERS", Modifier.fillMaxWidth().padding(32.dp), textAlign = TextAlign.Center)
         Column(
             Modifier.fillMaxWidth(),
