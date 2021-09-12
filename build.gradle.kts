@@ -23,6 +23,10 @@ dependencies {
     implementation(compose.foundation)
     implementation(compose.material)
     implementation(compose.materialIconsExtended)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation("com.squareup.moshi:moshi:1.12.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+    implementation("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
 }
 
 tasks.withType<KotlinCompile>() {
@@ -34,7 +38,7 @@ compose.desktop {
         mainClass = "MainKt"
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "untitled"
+            packageName = "generator"
             packageVersion = "1.0.0"
         }
     }

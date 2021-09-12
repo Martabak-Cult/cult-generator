@@ -20,13 +20,21 @@ fun Layer(dir: LayersState.LayerData, layerstate: LayersState) {
     Column(
         Modifier.fillMaxWidth().padding(top = 16.dp),
     ) {
+//        IconToggleButton(true, {
+//            if (it)
+//                layerstate.showLayer(dir)
+//            else
+//                layerstate.hideLayer(dir)
+//        }, Modifier.size(16.dp)) {
+//            Icon(Icons.Default.WbSunny, "")
+//        }
         Text(dir.defaultDisplayName, Modifier.fillMaxWidth(), fontSize = 16.sp, textAlign = TextAlign.Center)
         Row(
             Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly, verticalAlignment = Alignment.CenterVertically
         ) {
 
-            IconButton( onClick = {
+            IconButton(onClick = {
                 layerstate.prevItem(dir)
             }, Modifier.weight(1f)) {
                 Icon(
@@ -35,7 +43,7 @@ fun Layer(dir: LayersState.LayerData, layerstate: LayersState) {
                     tint = Color.White
                 )
             }
-            Text(dir.selected.substringBefore('.'),Modifier.weight(3f), fontSize = 12.sp, textAlign = TextAlign.Center)
+            Text(dir.selected.substringBefore('.'), Modifier.weight(3f), fontSize = 12.sp, textAlign = TextAlign.Center)
             IconButton(onClick = {
                 layerstate.nextItem(dir)
             }, Modifier.weight(1f)) {

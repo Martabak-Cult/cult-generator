@@ -4,6 +4,7 @@ import androidx.compose.ui.window.WindowState
 import androidx.compose.ui.window.singleWindowApplication
 import martabak.cult.generator.ui.MainView
 
+
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() = singleWindowApplication(
     title = "Cult Generator",

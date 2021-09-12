@@ -46,10 +46,11 @@ fun GeneratorView() {
 fun CenterImage(layerState: LayersState, modifier: Modifier = Modifier) {
 
     layerState.layerList.forEach { l ->
-        val image: BufferedImage =
-            ImageIO.read(File(URLDecoder.decode("${l.path}${l.defaultDisplayName}/${l.selected}")))
-        layerState.g.drawImage(image, 0, 0, 1800, 1800, null)
-
+        if (!l.paused) {
+            val image: BufferedImage =
+                ImageIO.read(File(URLDecoder.decode("${l.path}${l.defaultDisplayName}/${l.selected}")))
+            layerState.g.drawImage(image, 0, 0, 1800, 1800, null)
+        }
     }
     Image(layerState.c.toComposeBitmap(), "", modifier = modifier)
 

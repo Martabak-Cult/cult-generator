@@ -36,8 +36,9 @@ fun SaveOne(layersState: LayersState) {
     }
 
     Column(Modifier.fillMaxWidth().padding(16.dp)) {
+        Text("Single")
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Text("Output path", Modifier.weight(3f))
+            Text("Output path", Modifier.weight(3f).padding(top = 8.dp), fontSize = 14.sp)
             IconButton(onClick = {
                 pathChooserOpen = true
             }, Modifier.size(16.dp).weight(1f)) {
