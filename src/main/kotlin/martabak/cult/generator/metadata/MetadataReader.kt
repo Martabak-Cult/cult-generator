@@ -2,7 +2,6 @@ package martabak.cult.generator.metadata
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import martabak.cult.generator.ui.layers.Attribute
 import martabak.cult.generator.ui.layers.Metadataa
 import java.io.BufferedReader
 import java.io.File
@@ -41,19 +40,29 @@ class MetadataReader {
                 attrMap[attr.traitType]?.set(attr.value, curr.plus(1))
             }
         }
-       return attrMap
+        return attrMap
     }
 
-    fun rarity(attributesCount: Map<String, HashMap<Any, Int>>): Map<String, HashMap<Any, Double>> {
+    fun rarity(attributesCount: Map<String, HashMap<Any, Int>>): List<Rarity> {
         val attrMap = hashMapOf<String, HashMap<Any, Double>>()
 
-        attributesCount.forEach { type, items ->
-            items.forEach { name, count ->
+        attributesCount.forEach { (type, items) ->
+            items.forEach { (name, count) ->
                 attrMap.putIfAbsent(type, hashMapOf<Any, Double>())
                 val percent = count.toDouble().div(metadataList.size.toDouble()).times(100)
                 attrMap.get(type)?.putIfAbsent(name, percent)
             }
         }
-        return attrMap
+        val final = arrayListOf<Rarity>()
+        attrMap.forEach { (t, u) ->
+            final.add(Rarity(t, u))
+        }
+
+        return final
     }
 }
+
+data class Rarity(
+    val name: String,
+    val items: HashMap<Any, Double>
+)

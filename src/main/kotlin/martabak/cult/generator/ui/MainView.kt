@@ -12,8 +12,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import martabak.cult.generator.metadata.MetadataReader
-import martabak.cult.generator.ui.layers.Metadataa
 import martabak.cult.generator.ui.theme.AppTheme
 import martabak.cult.generator.ui.theme.PlatformTheme
 
@@ -47,12 +45,7 @@ fun MainView() {
                         }
                         when (tab) {
                             Tabs.Tab1 -> GeneratorView()
-                            Tabs.Tab2 -> Column {
-                                val reader = MetadataReader()
-                                reader.loadFromDirectory("/Users/bas/Desktop/METANATOR/output")
-                                val rarity = reader.rarity(reader.countAttributes())
-                                println("")
-                            }
+                            Tabs.Tab2 -> MetadataView()
                         }
                     }
                 }
