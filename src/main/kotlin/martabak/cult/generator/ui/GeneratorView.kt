@@ -23,12 +23,38 @@ fun GeneratorView() {
     var layerstate = remember {
         LayersState(
             arrayListOf(
-                LayersState.LayerData("/Users/bas/Desktop/METANATOR/", "Background"),
-                LayersState.LayerData("/Users/bas/Desktop/METANATOR/", "Body"),
-                LayersState.LayerData("/Users/bas/Desktop/METANATOR/", "Shirt"),
-                LayersState.LayerData("/Users/bas/Desktop/METANATOR/", "Head"),
-                LayersState.LayerData("/Users/bas/Desktop/METANATOR/", "Eyes"),
-                LayersState.LayerData("/Users/bas/Desktop/METANATOR/", "Mouth"),
+                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Gynoid/", "Background"),
+                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Gynoid/", "Body"),
+                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Gynoid/", "Head"),
+                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Gynoid/", "Hair"),
+                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Gynoid/", "Eyes"),
+                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Gynoid/", "Shirt"),
+                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Gynoid/", "Neck"),
+                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Gynoid/", "Accessory"),
+                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Gynoid/", "Hands"),
+
+
+            //ANDDROID
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Android/", "Background"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Android/", "Body"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Android/", "Head"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Android/", "Hair"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Android/", "Eyes"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Android/", "Shirt"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Android/", "Neck"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Android/", "Accessory"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Android/", "Hands"),
+
+
+                //SHAMAN LAYERS
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Shaman/", "Background"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Shaman/", "Head"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Shaman/", "Eyes"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Shaman/", "Body"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Shaman/", "Neck"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Shaman/", "Left hand"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Shaman/", "Hands"),
+//                LayersState.LayerData("/Users/bas/Desktop/CULTFINAL/Shaman/", "Right hand"),
             )
         )
     }

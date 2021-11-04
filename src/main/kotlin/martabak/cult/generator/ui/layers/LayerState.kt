@@ -60,13 +60,29 @@ class LayersState(default: List<LayerData> = arrayListOf()) {
 
     fun shuffle(overrideState: Boolean = false): List<LayerData> {
         if (overrideState) {
-            val copyl = layerList.map { it.copy(selected = it.items[Random.nextInt(it.items.size)]) }.toMutableList()
+            val copyl = layerList.map {
+                var newSelect = it.items[Random.nextInt(it.items.size)]
+
+                if (newSelect.startsWith("empty")) {
+                    newSelect = "empty.png"
+                }
+
+                if (newSelect.startsWith("_")){
+                    newSelect = newSelect.replace("_", "")
+                }
+
+                it.copy(selected = newSelect)
+            }.toMutableList()
             layerList.clear()
             layerList.addAll(copyl)
             layerList
         }
         val copyl = layerList.map { it.copy(selected = it.items[Random.nextInt(it.items.size)]) }.toMutableList()
         return copyl
+    }
+
+    fun current() : List<LayerData> {
+        return layerList
     }
 
     fun hideLayer(data: LayerData) {

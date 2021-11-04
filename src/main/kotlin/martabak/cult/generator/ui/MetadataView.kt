@@ -21,7 +21,7 @@ import martabak.cult.generator.metadata.MetadataReader
 fun MetadataView() {
 
     val reader = MetadataReader()
-    reader.loadFromDirectory("/Users/bas/Desktop/METANATOR/output")
+    reader.loadFromDirectory("/Users/bas/Desktop/BATCH/merged")
     val attr = reader.countAttributes()
     val rarity = reader.rarity(attr)
     println("")

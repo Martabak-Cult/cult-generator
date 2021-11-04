@@ -98,7 +98,8 @@ fun SaveMany(layersState: LayersState) {
 
                         val attributes =
                             current.map { l -> Attribute(l.defaultDisplayName, l.selected.substringBefore('.')) }
-                        val metadata = Metadataa("Perso #$i", "descc", "", i, attributes)
+                       val filtered =  attributes.filter { it.value != "empty" }
+                        val metadata = Metadataa("Martabak Cult #$i", "descc", "", i, filtered)
 
                         val json = moshi.adapter(Metadataa::class.java).toJson(metadata)
                         PrintStream(layersState.manyOutputPath.value + "/$i.json").use { ps -> ps.println(json) }
